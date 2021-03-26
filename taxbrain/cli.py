@@ -67,6 +67,8 @@ def cli_core(startyear, endyear, data, usecps, reform, behavior, assump,
         behavioral assumptions for Behavioral-Responses
     assump: dict
         consumption assumptions
+    ogusa: bool
+        whether to use run OG-USA to update macro forecast for reform
     base_policy: dict
         parameter changes (relative to current law baseline) for baseline
         policy

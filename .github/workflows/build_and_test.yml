@@ -26,13 +26,14 @@ jobs:
         run: |
           sudo apt-get install texlive texlive-latex-extra
           pip install -e .
+          python -m pip install git+https://github.com/PSLmodels/OG-USA.git
           pip install pytest-cov
           pip install pytest-pycodestyle
       - name: Test
         shell: bash -l {0}
         working-directory: ./
         run: |
-          pytest --cov=./ --cov-report=xml
+          pytest -m "not local" --cov=./ --cov-report=xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
